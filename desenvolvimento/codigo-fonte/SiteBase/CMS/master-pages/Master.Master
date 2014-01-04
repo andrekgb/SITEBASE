@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="CMS.master_pages.Master" %>
+<%@ Register Src="~/user-controls/Topo.ascx" TagPrefix="uc" TagName="Topo" %>
+<!DOCTYPE html>
+<html>
+    
+    <head id="Head1" runat="server">
+        <title><%: Page.Title %> - Sistema de Administração de Conteúdo</title>
+        <!-- Bootstrap -->    
+        <link href="<%=ResolveUrl("~/Content/bootstrap/css/bootstrap.min.css") %>" rel="stylesheet" media="screen">
+        <link href="<%=ResolveUrl("~/Content/bootstrap/css/bootstrap-responsive.min.css") %>" rel="stylesheet" media="screen">
+        <link href="<%=ResolveUrl("~/Content/assets/styles.css") %>" rel="stylesheet" media="screen">
+        <link href="<%=ResolveUrl("~/Content/Custom.css") %>" rel="stylesheet" media="screen">
+        <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="vendors/flot/excanvas.min.js"></script><![endif]-->
+        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script src="<%=ResolveUrl("~/Content/vendors/modernizr-2.6.2-respond-1.1.0.min.js") %>"></script>
+
+
+        <asp:ContentPlaceHolder ID="Scripts" runat="server">
+
+
+        </asp:ContentPlaceHolder>
+
+    </head>
+    
+    <body>        
+        <form id="Form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager" runat="server"></asp:ScriptManager>
+
+        <uc:Topo ID="topo" runat="server" />
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <!--/span-->
+                <div class="span12" id="content">
+
+                    <div class="navbar">
+                        <div class="navbar-inner">
+                            <asp:ContentPlaceHolder ID="BreadCrumb" runat="server"></asp:ContentPlaceHolder>	                        
+                        </div>
+                    </div>
+
+                    <asp:ContentPlaceHolder ID="Conteudo" runat="server"></asp:ContentPlaceHolder>
+
+                    <!-- conteudo -->
+
+                </div>
+            </div>
+            <hr>
+            <footer>
+                <p>&copy; André Luiz Santana 2014</p>
+            </footer>
+        </div>
+
+        </form>
+        <!--/.fluid-container-->
+        <link href="<%=ResolveUrl("~/Content/vendors/datepicker.css") %>"" rel="stylesheet" media="screen">
+        <link href="<%=ResolveUrl("~/Content/vendors/uniform.default.css") %>" rel="stylesheet" media="screen">
+        <link href="<%=ResolveUrl("~/Content/vendors/chosen.min.css") %>" rel="stylesheet" media="screen">
+
+        <script src="<%=ResolveUrl("~/Content/vendors/jquery-1.9.1.js") %>"></script>
+        <script src="<%=ResolveUrl("~/Content/bootstrap/js/bootstrap.min.js") %>"></script>
+        <script src="<%=ResolveUrl("~/Content/vendors/jquery.uniform.min.js") %>"></script>
+        <script src="<%=ResolveUrl("~/Content/vendors/chosen.jquery.min.js") %>"></script>
+        <script src="<%=ResolveUrl("~/Content/vendors/bootstrap-datepicker.js") %>"></script>
+
+
+        <script src="<%=ResolveUrl("~/Content/assets/scripts.js") %>"></script>
+
+        <script src="<%=ResolveUrl("~/Scripts/app/app.ashx") %>"></script>
+        <script src="<%=ResolveUrl("~/Scripts/app/app.js") %>"></script>
+
+        <script>
+            $(function () {
+                $(".datepicker").datepicker();
+                $(".uniform_on").uniform();
+                $(".chzn-select").chosen();
+            });
+        </script>
+    </body>
+
+</html>
+

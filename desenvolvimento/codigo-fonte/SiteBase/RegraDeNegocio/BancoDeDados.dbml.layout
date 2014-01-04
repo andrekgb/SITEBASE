@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.75, 8.5" name="BancoDeDados">
+  <DataContextMoniker Name="/BancoDeDadosDataContext" />
+  <nestedChildShapes>
+    <classShape Id="bc0bdc01-6055-4e7d-b815-1149c347c352" absoluteBounds="0.5, 0.625, 2, 2.0822371419270831">
+      <DataClassMoniker Name="/BancoDeDadosDataContext/Erro" />
+      <nestedChildShapes>
+        <elementListCompartment Id="449b61cc-dd43-4ae0-9205-9e83dc981d6f" absoluteBounds="0.51499999999999968, 1.085, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b7a8b485-93a2-48c3-90d0-ef27c174939c" absoluteBounds="6.75, 2.5, 2, 1.2605004882812496">
+      <DataClassMoniker Name="/BancoDeDadosDataContext/Fale_Conosco_Assunto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e3f70828-32b8-48ae-a34c-0ef16a597f4c" absoluteBounds="6.765, 2.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="83972193-2c9c-4800-a9de-f9147b170678" absoluteBounds="9.5, 1, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/BancoDeDadosDataContext/Fale_Conosco_Email" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6baf88db-897e-4a68-8636-b2f2ebeee0a3" absoluteBounds="9.515, 1.46, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9c31c507-d3c4-4bdd-b8a7-c05813d74f10" absoluteBounds="9.5, 3.25, 2, 2.0822371419270826">
+      <DataClassMoniker Name="/BancoDeDadosDataContext/Fale_Conosco_Formularios_Enviado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d22b4b3-5dad-4737-8fb3-fcc7ab45c9fc" absoluteBounds="9.515, 3.71, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8ca36f85-b4f5-45c3-9aff-8dad48e88fcf" absoluteBounds="3.75, 4.75, 2, 1.7535424804687505">
+      <DataClassMoniker Name="/BancoDeDadosDataContext/MenuSite" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9327e3f7-a98d-4126-9038-b508da54d43e" absoluteBounds="3.765, 5.21, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1b92c65e-4293-4aab-8af0-21aaa60ddd8f" absoluteBounds="0.75, 4.75, 2, 2.9039737955729166">
+      <DataClassMoniker Name="/BancoDeDadosDataContext/Noticia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="28962d82-9c41-442f-923e-ece2298496b4" absoluteBounds="0.765, 5.21, 1.9700000000000002, 2.3439737955729165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1eea978f-fa0b-4a4f-8f46-36e9d7ef6f41" absoluteBounds="3.75, 0.75, 2, 2.5752791341145826">
+      <DataClassMoniker Name="/BancoDeDadosDataContext/Pagina" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d4054997-6348-4a92-8922-494ed5650785" absoluteBounds="3.765, 1.21, 1.9700000000000002, 2.015279134114583" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.75 : 2.5); (7.75 : 1.71242390950521); (9.5 : 1.71242390950521)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BancoDeDadosDataContext/Fale_Conosco_Assunto/Fale_Conosco_Assunto_Fale_Conosco_Email" />
+      <nodes>
+        <classShapeMoniker Id="b7a8b485-93a2-48c3-90d0-ef27c174939c" />
+        <classShapeMoniker Id="83972193-2c9c-4800-a9de-f9147b170678" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 3.50525024414062); (9.5 : 3.50525024414062)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BancoDeDadosDataContext/Fale_Conosco_Assunto/Fale_Conosco_Assunto_Fale_Conosco_Formularios_Enviado" />
+      <nodes>
+        <classShapeMoniker Id="b7a8b485-93a2-48c3-90d0-ef27c174939c" />
+        <classShapeMoniker Id="9c31c507-d3c4-4bdd-b8a7-c05813d74f10" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.4552495323768 : 6.50354248046875); (4.4552495323768 : 6.75354248046875); (5.05878620417668 : 6.75354248046875); (5.05878620417668 : 6.50354248046875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BancoDeDadosDataContext/MenuSite/MenuSite_MenuSite" />
+      <nodes>
+        <classShapeMoniker Id="8ca36f85-b4f5-45c3-9aff-8dad48e88fcf" />
+        <classShapeMoniker Id="8ca36f85-b4f5-45c3-9aff-8dad48e88fcf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.45923076923077 : 7.65397379557292); (1.45923076923077 : 7.90397379557292); (2.05461538461538 : 7.90397379557292); (2.05461538461538 : 7.65397379557292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BancoDeDadosDataContext/Noticia/Noticia_Noticia" />
+      <nodes>
+        <classShapeMoniker Id="1b92c65e-4293-4aab-8af0-21aaa60ddd8f" />
+        <classShapeMoniker Id="1b92c65e-4293-4aab-8af0-21aaa60ddd8f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.45923076923077 : 3.32527913411458); (4.45923076923077 : 3.57527913411458); (5.05461538461539 : 3.57527913411458); (5.05461538461539 : 3.32527913411458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BancoDeDadosDataContext/Pagina/Pagina_Pagina" />
+      <nodes>
+        <classShapeMoniker Id="1eea978f-fa0b-4a4f-8f46-36e9d7ef6f41" />
+        <classShapeMoniker Id="1eea978f-fa0b-4a4f-8f46-36e9d7ef6f41" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

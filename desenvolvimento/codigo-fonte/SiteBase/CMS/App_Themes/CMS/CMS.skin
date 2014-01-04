@@ -1,0 +1,12 @@
+﻿<asp:ValidationSummary runat="server" CssClass="alert alert-error" />
+<asp:RequiredFieldValidator runat="server" Display="None"/>
+<asp:RegularExpressionValidator runat="server" Display="None"/>
+
+
+<Wizard:WizardGridView runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" GridLines="None" 
+    WizardCustomPager="True" CssClass="table" PageSize="15" PagingVerticalAlignment ="Bottom"  EvenRowBackColor="white"
+    EmptyDataRowStyle-CssClass="WizardGridEmptyRow alert"
+    ImagePagingPreviousButton="~/Content/images/grid/left.png" ImagePagingNextButton="~/Content/images/grid/right.png" CssClassWizardPaging="WizardGridViewPaging"
+    ImageSortingDown="~/Content/images/grid/down.png" ImageSortingUp="~/Content/images/grid/up.png" MouseOverBackColor="#E6E6E6" >
+</Wizard:WizardGridView>
+

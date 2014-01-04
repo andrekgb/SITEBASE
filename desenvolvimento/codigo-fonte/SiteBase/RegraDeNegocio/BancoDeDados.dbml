@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SITE_BASE" Class="BancoDeDadosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=127.0.0.1;Initial Catalog=SITE_BASE;User ID=sa" SettingsObjectName="RegraDeNegocio.Properties.Settings" SettingsPropertyName="SITE_BASEConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Erros" Member="Erros">
+    <Type Name="Erro">
+      <Column Name="CodErro" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DataCadastro" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IP" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Pagina" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Mensagem" Type="System.String" DbType="VarChar(4000)" CanBeNull="true" />
+      <Column Name="StackTrace" Type="System.String" DbType="VarChar(8000)" CanBeNull="true" />
+      <Column Name="Resolvido" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Fale_Conosco_Assuntos" Member="Fale_Conosco_Assuntos">
+    <Type Name="Fale_Conosco_Assunto">
+      <Column Name="AssuntoID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsAtivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Fale_Conosco_Assunto_Fale_Conosco_Email" Member="Fale_Conosco_Emails" ThisKey="AssuntoID" OtherKey="AssuntoID" Type="Fale_Conosco_Email" />
+      <Association Name="Fale_Conosco_Assunto_Fale_Conosco_Formularios_Enviado" Member="Fale_Conosco_Formularios_Enviados" ThisKey="AssuntoID" OtherKey="AssuntoID" Type="Fale_Conosco_Formularios_Enviado" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Fale_Conosco_Emails" Member="Fale_Conosco_Emails">
+    <Type Name="Fale_Conosco_Email">
+      <Column Name="EmailID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssuntoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Fale_Conosco_Assunto_Fale_Conosco_Email" Member="Fale_Conosco_Assunto" ThisKey="AssuntoID" OtherKey="AssuntoID" Type="Fale_Conosco_Assunto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Fale_Conosco_Formularios_Enviados" Member="Fale_Conosco_Formularios_Enviados">
+    <Type Name="Fale_Conosco_Formularios_Enviado">
+      <Column Name="FormularioID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DataEnvio" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IP" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Telefone" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AssuntoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mensagem" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Fale_Conosco_Assunto_Fale_Conosco_Formularios_Enviado" Member="Fale_Conosco_Assunto" ThisKey="AssuntoID" OtherKey="AssuntoID" Type="Fale_Conosco_Assunto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MenuSite" Member="MenuSites">
+    <Type Name="MenuSite">
+      <Column Name="MenuSiteID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Texto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Link" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="AbreNovaJanela" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Ordem" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MenuSiteIDPai" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="MenuSite_MenuSite" Member="MenuSites" ThisKey="MenuSiteID" OtherKey="MenuSiteIDPai" Type="MenuSite" />
+      <Association Name="MenuSite_MenuSite" Member="MenuSite1" ThisKey="MenuSiteIDPai" OtherKey="MenuSiteID" Type="MenuSite" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Noticias" Member="Noticias">
+    <Type Name="Noticia">
+      <Column Name="NoticiaID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Data" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Titulo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Resumo" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="HTML" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="IsAtiva" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DataCriacao" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DataAtualizacao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NoticiaIDOriginal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DataInicioPublicacao" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DataTerminoPublicacao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Imagem" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ImagemShareFAcebook" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Noticia_Noticia" Member="Noticias" ThisKey="NoticiaID" OtherKey="NoticiaIDOriginal" Type="Noticia" />
+      <Association Name="Noticia_Noticia" Member="Noticia1" ThisKey="NoticiaIDOriginal" OtherKey="NoticiaID" Type="Noticia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Paginas" Member="Paginas">
+    <Type Name="Pagina">
+      <Column Name="PaginaID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Titulo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Resumo" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="Imagem" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="HTML" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="IsAtiva" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DataCriacao" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DataAtualizacao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PaginaIDOriginal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ImagemShareFAcebook" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Association Name="Pagina_Pagina" Member="Paginas" ThisKey="PaginaID" OtherKey="PaginaIDOriginal" Type="Pagina" />
+      <Association Name="Pagina_Pagina" Member="Pagina1" ThisKey="PaginaIDOriginal" OtherKey="PaginaID" Type="Pagina" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
